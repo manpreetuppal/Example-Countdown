@@ -1,0 +1,22 @@
+   <asp:TextBox ID="txtpresentTime" runat="server" Style="display: none"></asp:TextBox>
+                                                <label class="control-label col-md-3">Time left</label>
+                                                <div class="col-md-9" id="ttt" runat="server">
+                                                    <script type="application/javascript">
+                                                        function test() {
+                                                            var obj = document.getElementById('ContentPlaceHolder1_divTestTime').innerHTML;
+                                                            var myCountdownTest = new Countdown({
+                                                                time: obj,
+                                                                width: 250,
+                                                                height: 80,
+                                                                onComplete: countdownComplete,
+                                                                rangeHi: "hour"	// <- no comma on last item!
+                                                            });
+                                                        }
+                                                        test();
+
+                                                        function countdownComplete() {
+                                                            alert("Time out!");
+                                                            $('#ContentPlaceHolder1_btnFinish').click();
+                                                        };
+                                                    </script>
+                                                </div>
